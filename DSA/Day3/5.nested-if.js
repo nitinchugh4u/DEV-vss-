@@ -19,3 +19,5 @@ if (userAge > 18) {
 } else {
     console.log(" No,you cant vote");
 }
+
+
