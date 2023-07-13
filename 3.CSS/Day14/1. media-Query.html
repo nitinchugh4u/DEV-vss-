@@ -1,0 +1,46 @@
+
+<!-- 320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      @media screen and (max-width: 460px) {
+        .container {
+          background-color: blue;
+          padding: 12px;
+        }
+      }
+
+      @media screen and (min-width: 461px) and (max-width: 768px) {
+        .container {
+          background-color: red;
+          padding: 12px;
+        }
+      }
+
+      @media screen and (min-width: 769px) {
+        .container {
+          background-color: rgb(251, 255, 0);
+          padding: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p>Hello</p>
+    </div>
+  </body>
+</html>

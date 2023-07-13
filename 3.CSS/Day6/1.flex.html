@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            display: flex;
+            background-color: bisque;
+             /* flex-direction: row; */
+             /* flex-direction: column; */
+             /* flex-direction: row-reverse; */
+             /* flex-direction: column; */
+             padding: 12px;
+        }
+
+        .item{
+            background-color: aquamarine;
+             /* opacity: 0.4; */
+             border-top: 1px solid silver;
+        }
+
+        .nested-child {
+            display: flex;
+        }
+
+        h1{
+            display: flex;
+            flex-direction: row-reverse;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="item">Rahul</div>
+        <div class="item">Mahesh</div>
+        <div class="item">Sushmitha</div>
+        <div class="item">Abhishek</div>
+        <div class="item nested-child">
+            <h1>
+                <div>A</div>
+                <div>B</div>
+            </h1>
+            <h1>Sanket</h1>
+        </div>
+    </div>
+
+    
+</body>
+</html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    
+    .main-container {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: white;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        
+
+
+    }
+
+    .left-cont {
+        display: flex;
+        /* margin: 10px; */
+        
+        /* flex-direction: row; */
+        margin-top: 10px;
+
+    }
+
+    .left-child{
+        display: flex;
+        padding: 5px;
+        gap: 10px;
+        
+    }
+    .left-child input{
+        border: none;
+        background-color: #eef3f8;
+        width: 250px;
+    }
+
+    .left-child img{
+        height: 30px;
+        width: 30px;
+
+
+    }
+    .src{
+        /* border: 2px solid black; */
+        background-color: #eef3f8;
+        
+        
+
+    }
+    .link{
+        font-size: large;
+    }
+
+    .right-cont {
+        display: flex;
+        /* justify-content: space-between; */
+    }
+
+    .right-child {
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 20px;
+        margin-top: 10px;
+        color: gray;
+        cursor: pointer;
+        font-size: medium;
+    }
+
+    .main-page{
+        display: flex;
+        gap: 10px;
+        margin-top: 80px;
+        /* align-items: center; */
+        justify-content: center;
+    }
+
+    .LSD{
+        /* border: 2px solid red; */
+        /* height: 250px; */
+        width: 300px;
+
+    }
+    .MD{
+        /* border: 2px solid red; */
+        /* height: 250px; */
+        width: 530px;
+
+
+    }
+    .RSD{
+        /* border: 2px solid red;  */
+        height: 250px;
+        width: 300px;
+        }
+
+        
+
+        /* .Lsd-baby-1-child img{
+            height: 70px;
+            width: 300px;
+            border: 2px solid black;
+            /* position: absolute; */
+        /* } */ */
+
+        /* .cv {
+            height: 70px;
+            width: 280px;
+
+        }
+         */
+        .dp img{
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            /* position: relative; */
+        }
+
+        .lsd-baby-2{
+            border: 1px solid black;
+            padding: 8px;
+            
+            color:darkcyan
+        }
+
+        .Lsd-baby-1{
+            border: 1px solid black;
+
+
+        }
+
+
+        .rsd-child-1{
+            border: 1px solid black;
+            padding: 2px;
+            margin: 2px;
+        }
+
+        .rsd-child-1 span{
+            color: grey;
+            font-size: 15px;
+        }
+
+        .rsd-child-2{
+            border: 1px solid black;
+            padding: 10px;
+
+        }
+
+        .post{
+            border: 1px solid black;
+            
+            
+
+        }
+
+
+        .post-1{
+            display: flex;
+            gap: 10px;
+            margin: 10px;
+            
+        }
+        .post-1 span{
+            width: 80%;
+            border-radius: 30px;
+            padding-top: 15px;
+            padding-left: 10px;
+        }
+
+        .post-btn{
+            /* border: 1px solid black; */
+            padding: 10px;
+            display: flex;
+            gap: 70px
+            
+        }
+
+        .post-btn span{
+
+            
+            gap: 10px;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 5px;
+        }
+
+
+        .first-post{
+            border: 1px solid black;
+            width: 520px;
+            padding: 3px;
+            
+        }
+
+        .post-img img{
+            
+            
+            width: 519px;
+            height: 400px;
+
+        }
+
+        .first-post-btn{
+            display: flex;
+
+            justify-content: space-around;
+            margin: 8px;
+
+        }
+        .profile{
+            display: flex;
+            gap: 10px;
+            
+        }
+
+        .profile img{
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            margin-top: 12px;
+          
+        }
+
+        .about-me{
+            /* justify-content: center; */
+            /* align-items: center; */
+            text-align: center;
+    
+            
+        }
+
+        
+
+        
+
+        
+</style>
+
+
+<body>
+    <!-- navbar -->
+    <!-- main container -->
+    <div class="main-container">
+        <div class="left-cont">
+
+            <div class="left-child">
+                
+                <img src="https://play-lh.googleusercontent.com/kMofEFLjobZy_bCuaiDogzBcUT-dz3BBbOrIEjJ-hqOabjK8ieuevGe6wlTD15QzOqw" alt="">
+                <div>
+
+                <div class="left-child src">
+                   <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <input type="text" placeholder="search...">
+                </div>
+            </div>
+
+
+        </div>
+        </div>
+
+
+        <div class="right-cont">
+
+            <div class="right-child">
+                <span><i class="fa-solid fa-house"></i></span>
+                <span>Home</span>
+            </div>
+            <div class="right-child">
+                <span><i class="fa-solid fa-network-wired"></i></span>
+                <span>My Network</span>
+            </div>
+            <div class="right-child">
+                <span><i class="fa-solid fa-bag-shopping"></i></span>
+                <span>Jobs</span>
+            </div>
+            <div class="right-child">
+                <span><i class="fa-brands fa-rocketchat"></i></span>
+                <span>Messaging</span>
+            </div>
+            <div class="right-child">
+                <span><i class="fa-solid fa-bell"></i></span>
+                <span>Notifications</span>
+            </div>
+            <div class="right-child">
+                <span><i class="fa-solid fa-user"></i></span>
+                <span>Me</span>
+            </div>
+            <hr>
+            <div class="right-child">
+                <span><i class="fa-solid fa-bars"></i></span>
+                <span>For Business</span>
+            </div>
+            <div class="right-child">
+                <span>Try Premium for free </span>
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="main-page">
+
+        <div class="LSD">
+            <div class="Lsd-baby-1">
+                <div class="Lsd-baby-1-child">
+                    <img class="cv" style="height: 70px;width: 298px; position: absolute;"src="https://marketplace.canva.com/EAFSUH0EweU/1/0/1600w/canva-black-elegant-personal-linkedin-banner-eEN5zzEf5VA.jpg" alt="">
+                    <img class= "cv2" style= "height:60px; width:60px; position: relative;margin-top: 40px;margin-left: 115px; border-radius:50%;"  src="img.jpg" alt="">
+                    
+                <div class="about-me">
+                    <h3>Welome Nitin</h3>
+                    <hr>
+                    
+                    <h5>connections</h5>
+                    <h5>Grow your network</h5>
+                    <h5>Try premium for free</h5>
+                    <h5> My Items</h5>
+                </div>
+                    
+                    
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="lsd-baby-2">
+                <h5>Groups See all Groups</h5>
+                <h5>Events See all Events</h5>
+                <h5> Followed Hashtags See all Followed Hashtags</h5>
+                <h3>Discover more </h3>
+            </div>
+        </div>
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <div class="MD">
+
+            <div class="post">
+                <div class="post-1">
+                    <img class= "dp" style="position: relative; height: 50px; width: 50px; border-radius: 50%;"  src="img.jpg" alt="">
+
+                    <span style="border: 1px  solid;">start a post</span>
+
+                    </div>
+                
+                <div class="post-btn">
+                    <span><i class="fa-solid fa-image" style="color: #6ba1ff;"></i>Photo</span>
+                    <span><i class="fa-solid fa-video" style="color: #66ff9c;"></i>Video</span>
+                    <span><i class="fa-solid fa-briefcase" style="color: #9b71fe;"></i>Job</span>
+                    <span><i class="fa-solid fa-newspaper" style="color: #ff4000;"></i>send</span>
+                </div>
+            </div>
+            <hr>
+
+
+
+
+            <!-- middle field 1st post -->
+         <div class="first-post">
+            <!-- post-profile-div -->
+
+           <div class="profile">
+            <img src="img.jpg" alt="">
+            <h4>Nitn chugh</h4>
+            <p></p>
+
+           </div>
+
+           <!-- post image -->
+           <div class="post-img"><img src="https://wallpaperaccess.com/full/3684539.jpg" alt=""></div>
+            <!-- lower div  like comment post -->
+           <div class="first-post-btn">
+            
+            <span>Like  <i class="fa-solid fa-thumbs-up"></i></span>
+            <span>Comment <i class="fa-solid fa-comment"></i></span>
+            <span>Repost <i class="fa-solid fa-share-from-square"></i></span>
+            <span>Send <i class="fa-solid fa-share-nodes"></i></span>
+           </div>
+
+         </div>
+    <!-- here is end of 1st post -->
+
+    <br>
+    <br>
+
+     <!-- middle field 1st post -->
+     <div class="first-post">
+        <!-- post-profile-div -->
+
+       <div class="profile">
+        <img src="img.jpg" alt="">
+        <h4>Nitn chugh</h4>
+        <p></p>
+
+       </div>
+
+       <!-- post image -->
+       <div class="post-img"><img src="https://digitalconqueror.b-cdn.net/wp-content/uploads//2022/12/1092633.png" alt=""></div>
+        <!-- lower div  like comment post -->
+       <div class="first-post-btn">
+        
+        <span>Like  <i class="fa-solid fa-thumbs-up"></i></span>
+        <span>Comment <i class="fa-solid fa-comment"></i></span>
+        <span>Repost <i class="fa-solid fa-share-from-square"></i></span>
+        <span>Send <i class="fa-solid fa-share-nodes"></i></span>
+       </div>
+
+     </div>
+<!-- here is end of 1st post -->
+<br>
+<br>
+
+ <!-- middle field 1st post -->
+ <div class="first-post">
+    <!-- post-profile-div -->
+
+   <div class="profile">
+    <img src="img.jpg" alt="">
+    <h4>Nitn chugh</h4>
+    <p></p>
+
+   </div>
+
+   <!-- post image -->
+   <div class="post-img"><img src="https://img.rgstatic.com/content/show/ec0ec73a-07de-4b85-8f06-54453081ed9f/backdrop-1920.jpg" alt=""></div>
+    <!-- lower div  like comment post -->
+   <div class="first-post-btn">
+    
+    <span>Like  <i class="fa-solid fa-thumbs-up"></i></span>
+    <span>Comment <i class="fa-solid fa-comment"></i></span>
+    <span>Repost <i class="fa-solid fa-share-from-square"></i></span>
+    <span>Send <i class="fa-solid fa-share-nodes"></i></span>
+   </div>
+
+ </div>
+<!-- here is end of 1st post -->
+<br>
+<br>
+
+
+ <!-- middle field 1st post -->
+ <div class="first-post">
+    <!-- post-profile-div -->
+
+   <div class="profile">
+    <img src="img.jpg" alt="">
+    <h4>Nitn chugh</h4>
+    <p></p>
+
+   </div>
+
+   <!-- post image -->
+   <div class="post-img"><img src="https://assets.telegraphindia.com/telegraph/2021/Nov/1637710707_pjimage-23-1.jpg" alt=""></div>
+    <!-- lower div  like comment post -->
+   <div class="first-post-btn">
+    
+    <span>Like  <i class="fa-solid fa-thumbs-up"></i></span>
+    <span>Comment <i class="fa-solid fa-comment"></i></span>
+    <span>Repost <i class="fa-solid fa-share-from-square"></i></span>
+    <span>Send <i class="fa-solid fa-share-nodes"></i></span>
+   </div>
+
+ </div>
+<!-- here is end of 1st post -->
+<br>
+<br>
+
+
+
+            
+        </div>
+        
+        <div class="RSD">
+            <div class="rsd-child-1">
+                <h4>LinkedIn News </h4>
+                <ul>
+                    <li>Top trends in AI, finance, and retail</li>
+                    <span>Top news • 1,401 readers</span>
+                    <li>What makes an ad work?</li>
+                    <span>2d ago • 2,247 readers</span>
+                    <li>HRleaders talk Pride</li>
+                    <span>2d ago • 1,783 readers</span>
+                    <li>Cyber insurance costs soar</li>
+                    <span>2d ago • 1,783 readers</span>
+                    <li>Top trends in AI, finance, and retail</li>
+                    <span>Top news • 1,401 readers</span>
+                    <li>What makes an ad work?</li>
+                    <span>2d ago • 2,247 readers</span>
+                    <li>HRleaders talk Pride</li>
+                    <span>2d ago • 1,783 readers</span>
+                    <li>Cyber insurance costs soar</li>
+                    <span>2d ago • 1,783 readers</span>
+                    <li>HRleaders talk Pride</li>
+                    <span>2d ago • 1,783 readers</span>
+                    <li>Cyber insurance costs soar</li>
+                    <span>2d ago • 1,783 readers</span>
+                    <li>Top trends in AI, finance, and retail</li>
+                    <span>Top news • 1,401 readers</span>
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+            <br>
+            <br>
+            <div class="rsd-child-2">
+                <img src="https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png" width="280px" alt="">
+            <p>
+                About Accessibility Help Center Privacy & Terms Ad ChoicesAd Choices Advertising Business Services Get the LinkedIn app More LinkedIn Corporation ©2023
+            </p>
+            </div>
+        </div>
+
+        
+    </div>
+
+
+
+
+
+
+    
+</body>
+
+</html>

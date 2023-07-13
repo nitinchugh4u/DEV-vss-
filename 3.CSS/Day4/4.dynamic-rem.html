@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      :root {
+        font-size: 12px;
+      }
+
+      .heading {
+        font-size: 3rem;
+      }
+
+      .para {
+        font-size: 2rem;
+      }
+
+      .para2 {
+        font-size: 2.5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div>
+        <button onclick="handleChangeFont('-')">-</button>
+        <button onclick="handleChangeFont('+')">+</button>
+      </div>
+
+      <div class="container">
+        <h1 class="heading">hello</h1>
+        <p class="para">hello</p>
+        <p class="para2">hello</p>
+      </div>
+    </main>
+  </body>
+</html>
+
+<script>
+    let font = 12;
+    function handleChangeFont(op){
+        font = op === "+" ? font + 1 : font -1;
+        console.log({font});
+        document.documentElement.style.Property("font-size", `${font}px`)
+
+    }
+
+</script>
+
+
+
+
+
+
+
+
+
+

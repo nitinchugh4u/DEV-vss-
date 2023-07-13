@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    ul {
+      list-style-type: none;
+      padding-left: 20px;
+      background-color: coral;
+
+    }
+
+    li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 10px;
+
+
+    }
+
+    li::before {
+      content: "";
+      position: absolute;
+      /* position: relative; */
+      top: 5px;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      background-color: #000;
+      border-radius: 50%;
+    }
+
+
+    li:hover::before {
+      background-color: #f00;
+      /* Apply hover effect color */
+    }
+
+
+
+    li:hover {
+      background-color: crimson;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+</body>
+
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        list-style-type: none;
+        padding-left: 20px;
+      }
+
+      li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 10px;
+      }
+
+      li::before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        background-color: #000;
+        border-radius: 50%;
+      }
+
+      li:hover::before {
+        background-color: #f00; /* Apply hover effect color */
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </body>
+</html> -->

@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .header {
+    display: grid;
+    margin: 1rem;
+    grid-template-columns: 30fr 60fr;
+    gap: 1rem;
+  }
+  
+  .left {
+    height: 10vh;
+    background-color: rgb(133, 133, 234);
+  }
+  
+  .right {
+    height: 10vh;
+    background-color: rgb(158, 152, 152);
+  }
+  
+  .section {
+    height: 40vh;
+    margin: 0 1rem;
+    background-color: grey;
+  }
+  
+  .main-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1rem;
+  }
+  
+  .box {
+    width: 28vw;
+    height: 30vh;
+    margin: 0.5rem;
+    background-color: lightblue;
+  }
+  
+  .foot {
+    /* width: 95%; */
+    margin: 1rem;
+    background-color: lightgrey;
+    height: 30vh;
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .main-box {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  
+    .section {
+      height: 30vh;
+    }
+  
+    .box {
+      width: 80vw;
+      /* background-color: crimson; */
+      height: 10vh;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .box {
+      width: 100vh;
+      /* background-color: darkorchid; */
+    }
+  }
+  
+  /* 320px — 480px: Red, 12px Font
+  481px — 768px: Blue, 13px Font
+  769px — 1024px: Green, 14px Font
+  1025px — 1200px: Pink, 16px Font
+  1201px and more —  Magenta, 18px Font */
+  
+  .font {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    .font {
+      color: red;
+      font-size: 12px;
+    }
+  }
+  
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    .font {
+      font-size: 13px;
+      color: blue;
+    }
+  }
+  
+  @media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    .font {
+      font-size: 16px;
+      color: pink;
+    }
+  }
+  
+  @media only screen and (min-width: 1201px) {
+    .font {
+      font-size: 18px;
+      color: magenta;
+    }
+  }
+  
