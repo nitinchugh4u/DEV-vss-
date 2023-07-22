@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    
+</body>
+</html>
+
+<script>
+
+    function getGreeting(name){
+    return `hello ${name} welcome to the team`
+
+    }
+
+fetch("https://fakestoreapi.com/products")
+.then((krishna) => {
+    console.log(krishna);
+    return krishna.json();
+})
+.then((krishna) => {
+    console.log(krishna);
+})
+.catch((err) => {
+    console.log("err",err);
+
+})
+
+
+console.log("start");
+console.log(getGreeting("nitin"))
+console.log(getGreeting("ankit"))
+console.log(getGreeting("neha"))
+console.log("end");
+
+
+
+
+
+
+
+    
+    
+
+    
+
+
+
+   
+
+
+
+</script>
