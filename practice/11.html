@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .para{
+            color: red;
+            background-color: lightgrey;
+            padding: 20px;
+            margin-top: 100px;
+        
+        }
+    </style>
+</head>
+<body>
+    <p id="para"></p>
+    <p class="para-one">nitin</p>
+
+    <p class="para">nitin</p>
+    <h1 class="para">nitin</h1>
+    <span class=" para">nitin</span>
+    <div class="para">ntin</div>
+    <h2 class="para">nitin</h2>
+
+
+
+    
+</body>
+</html>
+
+<script>
+const paraId = document.getElementById("para");
+console.log(paraId);
+const paraElem = document.getElementsByClassName("para");
+    console.log(paraElem);
+    
+    console.log(paraElem[0]);
+    console.log(paraElem[1]);
+    console.log(paraElem[2]);
+    console.log(paraElem[3]);
+    console.log(paraElem[4]);
+
+    const arr = [1,2,3,4,5];  //[2,3,4,5,6]
+    for(let i =0;i<paraElem.length;i++){
+        paraElem[i].style.color = "blue";
+        paraElem[i].style.backgroundColor ="pink"
+        paraElem[i].style.borderRadius = "50px"
+        paraElem[i].style.border = "2px solid yellow"
+        paraElem[i].style.padding = "30px";
+        paraElem[i].style.margin = "50px";
+        paraElem[i].innerText = "change";
+        paraElem[i].style.textTransform ="uppercase"
+    }
+    console.log(paraElem);
+
+
+
+
+
+;
+
+    
+
+</script>

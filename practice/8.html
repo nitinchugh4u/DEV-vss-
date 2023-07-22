@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="para">
+        hey we are ready to go
+    </p>
+    
+</body>
+</html>
+<script>
+const paraElem = document.getElementById("para")
+console.log(paraElem);
+paraElem.style.backgroundColor ="red";
+paraElem.style.color = "black"
+
+paraElem.innerText = "we are in dubai"
+
+paraElem.style.color = "red";
+paraElem.style.backgroundColor = "lightgrey"
+paraElem.style.padding = "12px";
+paraElem.style.margin = "12px"
+paraElem.style.borderRadius = "12px";
+paraElem.style.border = "2px solid black"
+paraElem.innerText = "<strong>we are in newyork</strong>"
+paraElem.innerHTML = "<strong>we are in canada</strong>"
+</script>

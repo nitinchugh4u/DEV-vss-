@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  // // First way
+  fetch("https://fakestoreapi.com/products")
+    .then((nonParsedData) => nonParsedData.json())
+    .then((parsedData) => console.log("ParsedData: ", parsedData));
+
+  // Second way
+
+  fetch("https://fakestoreapi.com/products")
+    .then((nonParsedData) => {
+      const pData = nonParsedData.json();
+      console.log("PData: ", pData);
+      return pData;
+    })
+    .then((parsedData) => {
+      console.log("ParsedData: ", parsedData);
+      return "Delhi";
+    })
+    .then((data) => {
+      console.log("data: ", data);
+    })
+    .then((data) => {
+      console.log("data Last: ", data);
+    });
+</script>

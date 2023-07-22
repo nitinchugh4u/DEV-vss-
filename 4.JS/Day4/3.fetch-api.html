@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  function addNums(a, b) {
+    const sum = a + b;
+    return sum;
+  }
+
+  addNums(10, 80);
+</script>
+<script>
+  function getGreetings(name) {
+    return `Hello ${name}, welcome to C10`;
+  }
+
+  // Fetch -> Calling an API
+
+  function parseData(x) {
+    console.log("Non ParsedData: ", x);
+    return x.json();
+  }
+
+  function showResult(parsedData) {
+    console.log("Result: ", parsedData);
+  }
+
+  function handleError(error) {
+    console.log("Error: ", error);
+  }
+
+  fetch("https://fakestoreapi.com/products")
+    .then(parseData)
+    .then(showResult)
+    .catch(handleError);
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="nitin">hey nitin</p>
+
+    
+</body>
+</html>
+
+<script>
+   const paraElem =  document.getElementById("nitin");
+   console.log(paraElem);
+
+   const paraInnerText = paraElem.innerText;
+   console.log(paraInnerText);
+
+   paraElem.innerText = "hello sanket";
+   
+    paraInnerTextNow =paraElem.innerText;
+    console.log(paraInnerTextNow);
+    console.log(paraElem);
+
+    paraElem.style.color = "red";
+    paraElem.style.backgroundColor = "lightgrey";
+    paraElem.style.padding = "12px";
+    paraElem.style.border = "2px solid black";
+    paraElem.style.borderRadius = "10px";
+    paraElem.innerText = "<strong> hello riya </strong>";
+    paraElem.innerHTML = "<strong>hey riya</strong>"
+    
+
+
+
+
+    
+
+
+</script>

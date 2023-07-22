@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<script>
+
+    function getGreetings(name){
+        return `hello ${name} welcome to c10`
+
+    }
+
+    // fetch -> calling an API
+
+    fetch("https://fakestoreapi.com/products")
+     .then((krishna) => {
+        console.log(krishna)
+        return krishna.json()
+     })
+      
+     .then((krishna) => console.log("krishna Data", krishna)
+     
+
+     )
+      
+     .catch((err) => {
+      console.log("err",err);
+     })
+
+
+
+    console.log("start");
+    console.log(getGreetings("nitin"));
+    console.log(getGreetings("palak"))
+    console.log(getGreetings("ankit"))
+    console.log("end")
+</script>

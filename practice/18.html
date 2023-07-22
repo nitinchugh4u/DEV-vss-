@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    fetch("https://fakestoreapi.com/products")
+    .then((nonParsedData)=> nonParsed.json())
+    .then((parsedData)=>console.log("parsedData"));
+
+
+
+
+    fetch("https://fakestoreapi.com/products")
+    .then((nonParsedData) => {
+        const pData = nonParseData.json();
+        console.log("pdata",pdata)
+        return pData;
+    })
+    .then((parsedData) => {
+        console.log("parsedData",parsedData);
+        return "delhi";
+    }
+    )
+    .then((data) => {
+        console.log("data",data);
+    })
+
+    .then((data) => {
+      console.log("data Last: ", data);
+    });
+
+
+
+
+
+</script>

@@ -1,0 +1,36 @@
+<!-- https://github.com/Akash-Zawar/Problem-Solving -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+  </head>
+  <body>
+    <div id="products"></div>
+  </body>
+</html>
+
+<script>
+  const result = fetch("https://fakestoreapi.com/products");
+  /* result
+    .then((aayaHuaData) => aayaHuaData.json())
+    .then((meraData) => {
+      renderUI(meraData);
+    }); */
+
+  result
+    .then(function (aayaHuaData) {
+      return aayaHuaData.json();
+    })
+    .then(function (meraUparSeAayaHuaData) {
+      console.log("Result: ", meraUparSeAayaHuaData);
+      giveMeDataAndILLLoopAndRenderUI(meraUparSeAayaHuaData);
+    });
+
+  function giveMeDataAndILLLoopAndRenderUI(data) {
+    console.log("Data insider renderUI: ", data);
+  }
+</script>

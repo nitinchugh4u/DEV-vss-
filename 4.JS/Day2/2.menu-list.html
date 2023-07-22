@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- kuch hua -->
+    <!-- kispe hua -->
+    <style>
+        body{
+            margin: 0;
+        }
+        #list{
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 22px;
+            background-color: lightgrey;
+            justify-content: center;
+            padding: 12px;
+        }
+
+        li{
+            cursor: pointer;
+            list-style-type: none;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li class="item">Home</li>
+        <li class="item">Foods</li>
+        <li class="item">Blogs</li>
+        <li class="item">About</li>
+        <li class="item">Contact</li>
+    </ul>
+
+    
+</body>
+</html>
+
+
+<script>
+const listElem = document.getElementById("list");
+console.log(listElem); // ul
+const listItemsElem = document.getElementsByClassName("item");
+console.log(listItemsElem); //li
+
+
+listElem.addEventListener("click",onListClick)
+function onListClick(e){
+    // e.stopProp
+    console.log(e); // <li></li>
+    const currentElement = e.target.innerText;  
+    console.log(currentElement);   //home
+    e.target.style.color ="red";
+    console.log(currentElement);
+
+    for(let i =0; i<listItemsElem.length; i++){
+        if(listItemsElem[i].innerText!==currentElement){
+            listItemsElem[i].style.color = "black";
+        }
+    }
+
+}
+
+
+
+
+// 
+// 
+// listItemsElem.addEventListener("click",onListClick)
+// function onListClick(e){
+//     console.log(e); // <li></li>
+//     const currentElement = e.target.innerText;
+//     console.log(currentElement);   //home
+//     e.target.style.color ="red";
+//     console.log(currentElement);
+
+    // for(let i =0; i<listItemsElem.length; i++){
+    //     // if(listItemsElem[i].innerText!==currentElement){
+    //         // listItemsElem[i].style.color = "black";
+    //     // }
+    //     listItemsElem[i].addEventListener("click",onListClick)
+        
+    // }
+
+    //  function onListClick(e){
+    //     console.log(e);
+    //     console.log(e.target.style.color ="blue")
+
+    // }
+
+    
+
+    // const event = {     
+    //     target:{
+    //         styles:{
+    //             color:"red",
+    //             backgroundColor: "black",
+    //         },
+    //         innerHtml: "contact",
+    //         innerText: "contact",
+    //     }
+    // }
+    // console.log(event.targert.innerText);
+
+
+
+
+
+// }
+
+
+
+
+
+</script>

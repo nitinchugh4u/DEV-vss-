@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <style>
+      body {
+        background-color: azure;
+      }
+      #products {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .search {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+      }
+
+      .search > input {
+        width: 500px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: #b4b1b17b;
+        border: none;
+        padding: 0 20px;
+        font-size: 25px;
+        font-weight: 400;
+      }
+
+      .card {
+        width: 200px;
+        height: auto;
+        background-color: rgba(148, 147, 147, 0.096);
+        color: rgb(7, 0, 0);
+        padding: 12px 5px 0 5px;
+        display: flex;
+        flex-direction: column;
+      }
+      .card > p {
+        margin: 5px;
+      }
+
+      .desc {
+        text-overflow: ellipsis;
+        overflow-wrap: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="search">
+        <input type="text" placeholder="Search title" />
+      </div>
+    </header>
+
+    <div id="products"></div>
+  </body>
+</html>
+
+<script>
+  const productListContainer = document.getElementById("products");
+  const result = fetch("https://fakestoreapi.com/products");
+  /* result
+    .then((aayaHuaData) => aayaHuaData.json())
+    .then((meraData) => {
+      renderUI(meraData);
+    }); */
+
+  result
+    .then(function (aayaHuaData) {
+      return aayaHuaData.json();
+    })
+    .then(function (meraUparSeAayaHuaData) {
+      console.log("Result: ", meraUparSeAayaHuaData);
+
+      for (let i = 0; i < meraUparSeAayaHuaData.length; i++) {
+        const currentProduct = meraUparSeAayaHuaData[i];
+
+        const cardElem = document.createElement("div");
+        cardElem.className = "card";
+
+        const titleElem = document.createElement("p");
+        titleElem.innerText = meraUparSeAayaHuaData[i].title;
+        titleElem.style.color = "red";
+
+        const priceElem = document.createElement("p");
+        priceElem.innerText = "$ " + meraUparSeAayaHuaData[i].price;
+
+        const imgElem = document.createElement("img");
+        imgElem.src = meraUparSeAayaHuaData[i].image;
+
+        const descElem = document.createElement("p");
+        descElem.innerText = meraUparSeAayaHuaData[i].description;
+        descElem.className = "desc";
+        imgElem.style.width = "100%";
+        imgElem.style.heigth = "auto";
+
+        cardElem.appendChild(imgElem);
+        cardElem.appendChild(titleElem);
+        cardElem.appendChild(priceElem);
+        cardElem.appendChild(descElem);
+
+        productListContainer.appendChild(cardElem);
+      }
+    });
+
+  /* function giveMeDataAndILLLoopAndRenderUI(data) {
+    console.log("Data insider renderUI: ", data);
+  } */
+</script>

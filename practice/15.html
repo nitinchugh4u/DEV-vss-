@@ -1,0 +1,76 @@
+<!-- // let numbers = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105]; -->
+<!-- // Even -> Red -->
+<!-- // Odd -> Blue -->
+<!-- // // background color red -->
+<!-- // // background color blue -->
+<!-- task2 -->
+<!-- u clicked on this card number -->
+<!-- https://chat.openai.com/share/74fb5d74-e6e2-47fb-81cd-19b1a4ce275c -->
+<!-- https://chat.openai.com/share/74fb5d74-e6e2-47fb-81cd-19b1a4ce275c -->
+
+<!-- div.classList -->
+<!-- div.classList.add("flex") -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id ="divBucket">
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+     let numbers = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105];
+
+    let bucket = document.getElementById("divBucket");
+    bucket.style.display ="flex"
+    bucket.style.justifyContent = "center";
+    bucket.style.alignItems = "center";
+    bucket.style.background = "lightgrey"
+    bucket.style.height = "500px"
+    bucket.style.gap = "10px"
+    // bucket.style.width ="1000px"
+    bucket.style.flexWrap = "wrap";
+
+    
+    //    childBucket1.style.alignItems ="center"
+    for(let i=0;i<numbers.length; i++){
+        if(numbers[i]%2==0){
+       let childBucket1 = document.createElement("div");
+       childBucket1.innerText = numbers[i];
+       childBucket1.style.backgroundColor = "red";
+       childBucket1.style.height = "100px"
+       childBucket1.style.width ="100px"
+       childBucket1.style.display ="flex"
+       childBucket1.style.justifyContent ="center"
+       childBucket1.style.alignItems ="center"
+
+       bucket.appendChild(childBucket1);
+    }else{
+        let childBucket2 = document.createElement("div");
+        childBucket2.innerText = numbers[i];
+        childBucket2.style.background = "blue" ;
+        childBucket2.style.height = "100px"
+       childBucket2.style.width ="100px"
+       childBucket2.style.display ="flex"
+       childBucket2.style.justifyContent ="center"
+       childBucket2.style.alignItems ="center"
+        bucket.appendChild(childBucket2);
+        
+    }
+
+
+    }
+    
+
+
+</script>

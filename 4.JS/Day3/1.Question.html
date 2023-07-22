@@ -1,0 +1,158 @@
+<!-- // let numbers = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105]; -->
+<!-- // Even -> Red -->
+<!-- // Odd -> Blue -->
+<!-- // // background color red -->
+<!-- // // background color blue -->
+<!-- task2 -->
+<!-- u clicked on this card number -->
+<!-- https://chat.openai.com/share/74fb5d74-e6e2-47fb-81cd-19b1a4ce275c -->
+<!-- https://chat.openai.com/share/74fb5d74-e6e2-47fb-81cd-19b1a4ce275c -->
+
+<!-- div.classList -->
+<!-- div.classList.add("flex") -->
+
+<!-- class name  class list -->
+<!-- https://github.com/xDAnkit/JavaScriptCodingInterviewQuestions  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #hello{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div id="hello">
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+let numbers = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105];
+  const ids = document.getElementById("hello")  
+for(let i =0; i<numbers.length; i++){
+    if(numbers[i]%2==0){
+        
+
+    const divTag = document.createElement("div"); 
+    divTag.innerText = numbers[i]; 
+    divTag.style.backgroundColor = "red";
+
+    ids.appendChild(divTag); 
+
+    }else{
+        
+    const divTag = document.createElement("div"); 
+    divTag.innerText = numbers[i]; 
+    divTag.style.backgroundColor = "blue";
+
+
+    ids.appendChild(divTag); 
+ }
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- }); -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM API</title>
+    <style>
+      .red {
+        background-color: aqua;
+        font-size: 50px;
+        height: 80px;
+        width: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="card"></div>
+  </body>
+</html>
+
+<script>
+  const card1 = document.getElementById("card");
+  const cardnum = [
+    10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100,
+    105,
+  ];
+
+  card1.style.display = "flex";
+  card1.style.flexWrap = "wrap";
+
+  for (let i = 0; i < cardnum.length; i++) {
+    const crecard = document.createElement("div");
+    if (cardnum[i] % 2 === 0) {
+      crecard.classList.add("red");
+      crecard.style.display = "flex";
+      crecard.style.alignItems = "center";
+      crecard.style.justifyContent = "center";
+      crecard.style.color = "white";
+    } else {
+      crecard.style.backgroundColor = "blue";
+      crecard.style.height = "100px";
+      crecard.style.width = "100px";
+      crecard.style.display = "flex";
+      crecard.style.alignItems = "center";
+      crecard.style.justifyContent = "center";
+      crecard.style.color = "white";
+      crecard.style.fontSize = "20px";
+    }
+    crecard.innerHTML = cardnum[i];
+
+    crecard.addEventListener("click", function (h) {
+      h.target.style.backgroundColor = "pink";
+    });
+
+    card1.appendChild(crecard);
+  }
+
+  //   function chnagecolor() {
+  //     let cardcolor = document.getElementsByTagName("div");
+  //     window.alert("hello");
+  //   }
+</script> -->

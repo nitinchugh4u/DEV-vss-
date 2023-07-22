@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #para{
+            color: red;
+            background-color: lightgray;
+            border: 2px solid black;
+            border-radius: 12px;
+            padding: 12px;
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <p id="para">hey nitin</p>
+</body>
+</html>
+
+<script>
+    const paraElem = document.getElementById("para");
+    console.log(paraElem);
+    paraElem.style.color = "blue"
+    paraElem.style.backgroundColor = "lightpink";
+
+    const innerText = paraElem.innerText;
+    console.log(innerText);
+    
+    const innerHtml =paraElem.innerHTML;
+    console.log(innerHtml);
+
+   const newText= paraElem.innerText = " we are going to goa";
+    console.log(newText);
+
+
+    console.log(paraElem);
+
+    paraElem.innerText = "we will be rich soon"
+    paraElem.style.color = "red";
+    paraElem.style.background = "lightgrey";
+    paraElem.style.padding = "20px"
+    paraElem.style.marginTop = "50px";
+    paraElem.style.border = "2px solid green"
+    paraElem.style.borderRadius = "20px";
+    paraElem.innerText = "hey dubai"
+
+    paraElem.innerHTML = "<strong>hey dubai</strong>"
+
+
+    
+
+    
+
+
+
+
+
+    
+</script>

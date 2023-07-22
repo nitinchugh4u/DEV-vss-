@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM API</title>
+    <style>
+      .red {
+        background-color: aqua;
+        font-size: 50px;
+        height: 80px;
+        width: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="card"></div>
+  </body>
+</html>
+
+<script>
+  const card1 = document.getElementById("card");
+  const cardnum = [
+    10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100,
+    105,
+  ];
+
+  card1.style.display = "flex";
+  card1.style.flexWrap = "wrap";
+
+  for (let i = 0; i < cardnum.length; i++) {
+    const crecard = document.createElement("div");
+    if (cardnum[i] % 2 === 0) {
+      crecard.classList.add("red");
+      crecard.style.display = "flex";
+      crecard.style.alignItems = "center";
+      crecard.style.justifyContent = "center";
+      crecard.style.color = "white";
+    } else {
+      crecard.style.backgroundColor = "blue";
+      crecard.style.height = "100px";
+      crecard.style.width = "100px";
+      crecard.style.display = "flex";
+      crecard.style.alignItems = "center";
+      crecard.style.justifyContent = "center";
+      crecard.style.color = "white";
+      crecard.style.fontSize = "20px";
+    }
+    crecard.innerHTML = cardnum[i];
+
+    crecard.addEventListener("click", function (h) {
+      h.target.style.backgroundColor = "pink";
+    });
+
+    card1.appendChild(crecard);
+  }
+  crecard.addEventListener("click", function (h) {
+      h.target.style.backgroundColor = "pink";
+    });
+
+
+    function chnagecolor() {
+      let cardcolor = document.getElementsByTagName("div");
+      window.alert("hello");
+    }
+</script>

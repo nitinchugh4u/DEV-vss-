@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p{
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="names"></div>
+
+    
+</body>
+</html>
+
+<script>
+   const namesElem = document.getElementById("names");
+   const namesList = ["Romesh", "Akash", "Ali", "Sonia", "Palak"];
+   
+   for(let i=0; i<namesList.length; i++){
+    const pTag = document.createElement("p");
+    pTag.innerText = namesList[i];
+    pTag.style.color ="red";
+    namesElem.appendChild(pTag); //push elememt
+
+
+   }
+   
+
+</script>

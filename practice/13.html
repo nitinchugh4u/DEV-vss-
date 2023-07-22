@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        p{
+            color: red;
+        } -->
+    </style>
+</head>
+<body>
+    <!-- <div id="names">
+        <p>nitin</p>
+        <p>nitin</p>
+        <p>nitin</p>
+        <p>nitin</p>
+        <p>nitin</p>
+
+    </div> -->
+    <div id="names">
+
+    </div>
+    
+</body>
+</html>
+<script>
+    // algo
+    // 1.create p element
+    // 2.innerText insert of an given array
+    // 3.insert in div tag
+   const namesElem = document.getElementById("names");
+    const namesList = ["nitin","rahul","neha","vidhi","mansi"];
+    for(let i =0;i<namesList.length; i++){
+       const pTag = document.createElement("p") ; // <p></p>
+       
+       pTag.innerText = namesList[i]; //<p>nitin</p>
+    //    console.log("hell0")
+       pTag.style.color ="red";
+       namesElem.appendChild(pTag);
+       console.log(pTag);
+    }
+
+
+    
+
+
+
+    
+    
+
+</script>

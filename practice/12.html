@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+         body {
+        margin: 0;
+      }
+        #list{
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            color: red;
+            background-color: lightgray;
+            list-style-type: none;
+            cursor: pointer;
+            padding: 12px;
+        }
+    </style> -->
+
+    <style>
+        body{
+            margin: 0;
+        }
+        /* #list{ */
+            /* display: flex; */
+            /* justify-content: center; */
+        /* } */
+    </style>
+
+
+
+</head>
+<body>
+    <ul id="list">
+        <li class="item">Home</li>
+        <li class="item">Food</li>
+        <li class="item">Blogs</li>
+        <li class="item">About</li>
+        <li class="item">Contact Us</li>
+    </ul>
+    
+</body>
+</html>
+<script>
+    const item = document.getElementsByClassName("item");
+    console.log(item); //li
+
+    const list = document.getElementById("list");
+    console.log(list); //ul
+
+    list.style.backgroundColor="lightgrey"
+    list.style.margin ="0"
+    list.style.display ="flex"
+    list.style.justifyContent ="center"
+
+    for(let i =0;i<item.length; i++){
+        // item[i].style.color = "red";
+        // item[i].style.backgroundColor = "lightgrey"
+        item[i].style.padding = "22px"
+        item[i].style.display= "flex"
+    }
+
+    list.addEventListener("click",onListClick)
+    function onListClick(e){
+        console.log(e);
+        const currentElement = e.target.innerText;
+        console.log(currentElement);
+        const Element = e.target;
+        console.log(Element);
+        Element.style.color ="red"; 
+        // currentElement.style.color ="red"
+
+for(let i =0; i<item.length;i++){
+    if(item[i].innerText !== currentElement){
+        item[i].style.color ="yellow"
+    }
+}
+    }
+
+
+
+
+</script>

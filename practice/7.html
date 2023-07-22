@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #nitin{
+            background-color:lightgrey;
+            color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <p id="nitin">hey,ready to fly</p>
+    
+</body>
+</html>
+
+<script>
+   const paraElem = document.getElementById("nitin");
+   console.log(paraElem);
+   paraElem.style.color = "green";
+   paraElem.style.backgroundColor = "black"
+   const paraInnerText = paraElem.innerText;
+   console.log(paraInnerText);
+   
+  const newInner = paraElem.innerText = "hey we are raedy to fly";
+   paraElem.style.color ="red";
+   paraElem.style.backgroundColor = "pink"
+   console.log(paraElem);
+   console.log(newInner);
+
+   paraElem.innerText = "<strong>hello we are in goa</strong> ";
+   paraElem.style.color ="grey"
+   paraElem.style.backgroundColor = "pink"
+
+ paraElem.innerText = "<strong>we are ready to eat </strong>"
+ paraElem.innerHTML = "<strong> we are in dubai</strong>"
+ 
+
+</script>

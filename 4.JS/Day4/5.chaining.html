@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  // chirag arora
+  let name = "  ChI-raG AR-oRa  ";
+  let name2 = "  ABC-rdF drF-stF  ";
+
+  // Way 1- Normal way
+  name = name.toLowerCase();
+  name = name.trim();
+  name = name.replaceAll("-", "");
+
+  console.log("Name:", name);
+
+  // Way 2 - Chaining
+  // "  ABC-rdF drF-stF  " // toLowerCase -> "  abc-rdf drF-stF  "
+  name2 = name2.toLowerCase().trim().replaceAll("-", "");
+
+  console.log("Name2:", name2);
+</script>
