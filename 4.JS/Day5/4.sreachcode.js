@@ -35,7 +35,9 @@ function filterProducts(data, search) {
   let filteredResult = [];
   for (let i = 0; i < data.length; i++) {
     // Destructure
-    const { title } = data[i];
+    // const { title } = data[i];
+    
+    const title = data[i].title;
 
     if (title.toLowerCase().includes(search)) {
       filteredResult.push(data[i]);

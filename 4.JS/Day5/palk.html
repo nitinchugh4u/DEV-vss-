@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <!-- Add Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-gray-100">
+    <div class="container mx-auto py-10">
+      <div class="relative mb-5">
+        <input
+          type="text"
+          id="searchInput"
+          class="p-4 w-full md:w-96 border rounded-md focus:outline-none focus:ring focus:ring-blue-300 text-lg"
+          placeholder="Search for products..."
+        />
+        <div
+          id="searchSuggestions"
+          class="absolute bg-white border rounded-md mt-2 py-1 px-4 w-full md:w-96 shadow-lg hidden"
+        >
+          <!-- Suggestions will be added here dynamically -->
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row items-center mb-4">
+        <div class="md:mr-4 mb-2 md:mb-0">
+          <label for="sortSelect" class="font-semibold">Sort by:</label>
+          <select
+            id="sortSelect"
+            class="px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+          >
+            <option value="price-asc">Price (Low to High)</option>
+            <option value="price-desc">Price (High to Low)</option>
+            <option value="title-asc">Title (A to Z)</option>
+            <option value="title-desc">Title (Z to A)</option>
+          </select>
+        </div>
+        <div>
+          <label for="categorySelect" class="font-semibold"
+            >Filter by Category:</label
+          >
+          <select
+            id="categorySelect"
+            class="px-3 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+          >
+            <option value="">All</option>
+            <option value="electronics">Electronics</option>
+            <option value="jewelery">Jewelery</option>
+            <option value="men's clothing">Men's Clothing</option>
+            <option value="women's clothing">Women's Clothing</option>
+          </select>
+        </div>
+      </div>
+      <div
+        id="products"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+      ></div>
+    </div>
+
+    <!-- Add Bootstrap JS and Tailwind CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.js"></script>
+    <script>
+      const productListContainer = document.getElementById("products");
+      const searchInput = document.getElementById("searchInput");
+      const searchSuggestions = document.getElementById("searchSuggestions");
+      const sortSelect = document.getElementById("sortSelect");
+      const categorySelect = document.getElementById("categorySelect");
+      let productListData = [];
+      let debounceTimer;
+
+      // Show loading animation while fetching data
+      productListContainer.innerHTML =
+        '<div class="text-center">Loading...</div>';
+
+      fetch("https://fakestoreapi.com/products")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          productListData = data;
+          console.log("Data received:", productListData);
+          renderUIList();
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+          productListContainer.innerHTML =
+            "<div class='text-center'>Error fetching data. Please try again later.</div>";
+        });
+
+      function renderUIList() {
+        productListContainer.innerHTML = "";
+
+        if (!productListData || productListData.length === 0) {
+          productListContainer.innerHTML =
+            "<div class='text-center'>No products found</div>";
+          return;
+        }
+
+        // Apply sorting and filtering
+        const searchTerm = searchInput.value.toLowerCase();
+        const selectedCategory = categorySelect.value;
+        const selectedSort = sortSelect.value;
+
+        const filteredData = productListData.filter(
+          (item) =>
+            item.title.toLowerCase().includes(searchTerm) &&
+            (selectedCategory === "" || item.category === selectedCategory)
+        );
+
+        let sortedData = filteredData;
+        if (selectedSort === "price-asc") {
+          sortedData = filteredData.sort((a, b) => a.price - b.price);
+        } else if (selectedSort === "price-desc") {
+          sortedData = filteredData.sort((a, b) => b.price - a.price);
+        } else if (selectedSort === "title-asc") {
+          sortedData = filteredData.sort((a, b) =>
+            a.title.localeCompare(b.title)
+          );
+        } else if (selectedSort === "title-desc") {
+          sortedData = filteredData.sort((a, b) =>
+            b.title.localeCompare(a.title)
+          );
+        }
+
+        for (const product of sortedData) {
+          const cardElem = document.createElement("div");
+          cardElem.className =
+            "bg-white rounded-lg shadow-lg p-4 transition-transform transform hover:scale-105";
+
+          const imgElem = document.createElement("img");
+          imgElem.className = "w-full h-40 object-cover rounded-md mb-3";
+          imgElem.src = product.image;
+          imgElem.alt = product.title;
+
+          const titleElem = document.createElement("p");
+          titleElem.className = "text-lg font-semibold text-gray-800";
+          titleElem.innerText = product.title;
+
+          const priceElem = document.createElement("p");
+          priceElem.className = "text-gray-600";
+          priceElem.innerText = `$${product.price}`;
+
+          cardElem.appendChild(imgElem);
+          cardElem.appendChild(titleElem);
+          cardElem.appendChild(priceElem);
+          productListContainer.appendChild(cardElem);
+        }
+      }
+
+      function handleSearchInput() {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(renderUIList, 300);
+      }
+
+      searchInput.addEventListener("input", handleSearchInput);
+      sortSelect.addEventListener("change", renderUIList);
+      categorySelect.addEventListener("change", renderUIList);
+    </script>
+  </body>
+</html>

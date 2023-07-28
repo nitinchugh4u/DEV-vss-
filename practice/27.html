@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+
+
+
+#container {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .Element {
+        width: 200px;
+        height: 160px;
+        background-color: tomato;
+        color: rgb(7, 0, 0);
+        padding: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .images{
+        height: 100px;
+        width: 100px;
+        /* display: flex; */
+        /* justify-content: center; */
+        /* align-items: center; */
+
+
+      }
+
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    margin: 12px;
+    /* width: 50px; */
+    
+}
+.search input {
+    height: 20px;
+    width: 300px;
+}
+
+</style>
+
+<body>
+
+    <div class="search">
+        <input id="input" type="text" placeholder="search">
+
+    </div>
+    <div id="container">
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+
+   
+    const result = fetch("https://fakestoreapi.com/products");
+    result
+        .then(function (aayaHuaData) {
+            return aayaHuaData.json();
+        })
+        .then(function (meraUparSeAayaHuaData) {
+            console.log(meraUparSeAayaHuaData)
+
+            
+            let mainContainer = document.getElementById("container");
+            let inputSearch = document.getElementById("input")
+           for (let i = 0; i < meraUparSeAayaHuaData.length; i++) {
+            inputSearch.addEventListener("input",getInput())
+            function getInput(e){
+               let userValue = e.target.value;
+               console.log(userValue);
+
+            }
+            let capture = meraUparSeAayaHuaData[i].title;
+            // include
+
+
+                let insideDiv = document.createElement("div");
+                insideDiv.className = "Element"
+
+                let insidePara = document.createElement("p")
+                insidePara.innerText = meraUparSeAayaHuaData[i].title;
+
+                let insidePara2 = document.createElement("p");
+                insidePara2.innerText = meraUparSeAayaHuaData[i].price;
+                
+                let image = document.createElement("img");
+                image.src = meraUparSeAayaHuaData[i].image;
+                image.className = "images"
+
+                insideDiv.appendChild(insidePara);
+                insideDiv.appendChild(insidePara2);
+                insideDiv.appendChild(image);
+
+                mainContainer.appendChild(insideDiv);
+
+
+            }
+        })
+
+</script>

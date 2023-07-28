@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+         
+    
+
+    
+</body>
+</html>
+
+<script>
+   const result = fetch("https://fakestoreapi.com/products");
+   console.log("result",result);
+
+//    result
+//    .then((aayaHuaData) =>{
+//    return aayaHuaData.json();
+//    })
+//    .then((meraData) =>{
+//     // console.log(meraData)
+// //    })
+//   renderUi(meraData);
+//    });
+
+
+result
+.then(function (aayaHuaData){
+    return aayaHuaData.json();
+})
+.then(function (meraUparSeAayaHuaData){
+    console.log(meraUparSeAayaHuaData);
+    giveMeDataAndILLLoopAndRenderUI(meraUparSeAayaHuaData);
+
+})
+function giveMeDataAndILLLoopAndRenderUI(data){
+    console.log( "yo", data);
+}
+
+
+
+
+
+
+</script>

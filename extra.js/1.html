@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    let universal = document.querySelectorAll("*");
+for (let i = 0; i < universal.length; i++) {
+  universal[i].style.padding = "0px";
+  universal[i].style.margin = "0px";
+  universal[i].style.boxSizing = "border-box";
+}
+    let container = document.createElement("div");
+    let body = document.body;
+    body.appendChild(container);
+    container.style.height = "300px";
+    container.style.width = "300px";
+    container.style.backgroundColor = "red";
+    container.style.display = "flex";
+    container.style.flexWrap  = "wrap"  
+    // container.style.gap = "2px";
+    body.style.backgroundColor = "blue"
+    body.style.height = "100vh"
+    body.style.width = "100vw";
+    body.style.display = "flex";
+    body.style.justifyContent = "center"; 
+    body.style.alignItems = "center";
+    // container.style.gap = "2px";
+    
+     
+
+    //    container.className = "mainContainer"
+    //    let getContainer = document.getElementsByClassName("mainContainer");
+
+
+    for (let i = 0; i < 25; i++) {
+        // if (i % 2 == 0) {
+            let insideDiv1 = document.createElement("div");
+            insideDiv1.style.height = "20%";
+            insideDiv1.style.width = "20%";
+            insideDiv1.style.backgroundColor = "blue"
+            insideDiv1.style.display = "grid";
+            insideDiv1.style.placeItems = "center";
+            
+
+            // insideDiv1.innerText = "hello";
+            container.appendChild(insideDiv1);
+            if(i%2==0){
+                insideDiv1.style.backgroundColor = "yellow"
+            }else{ 
+                
+                let circle = document.createElement("div");
+                circle.style.height = "50%";
+                circle.style.width = "50%";
+                circle.style.backgroundColor = "yellow"
+
+                circle.style.borderRadius = "50%"
+                insideDiv1.appendChild(circle);
+                if(i==11|| i==13 ){
+                    circle.style.backgroundColor= "blue"
+                }
+                }
+
+
+                // if(i==11|| i==13 ){
+                    // circle.style.backgroundColor = "blue"
+                // }
+
+
+            
+            
+
+
+        // }
+        // else{
+        //     let  insideDiv2 = document.createElement("div");
+
+        // }
+
+    }
+
+
+</script>

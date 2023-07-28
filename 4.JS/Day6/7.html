@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hover CSS using JavaScript</title>
+    <style>
+      /* Define the default styles for the element */
+      .my-element {
+        width: 200px;
+        height: 100px;
+        background-color: blue;
+        color: white;
+        text-align: center;
+        line-height: 100px;
+        cursor: pointer;
+      }
+
+      /* Define the styles for the element when hovered */
+      .my-element:hover {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="my-element" id="myElement">Hover me!</div>
+
+    <script>
+      // JavaScript code starts here
+
+      // Get the element using its ID
+      const element = document.getElementById("myElement");
+
+      // Add event listener for mouseover (when the mouse enters the element)
+      element.addEventListener("mouseover", function () {
+        element.classList.add("my-element-hover");
+      });
+
+      // Add event listener for mouseout (when the mouse leaves the element)
+      element.addEventListener("mouseout", function () {
+        element.classList.remove("my-element-hover");
+      });
+    </script>
+  </body>
+</html>

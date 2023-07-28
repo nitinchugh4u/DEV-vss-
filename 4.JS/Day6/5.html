@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <button id="home-btn">Home</button>
+    </div>
+  </body>
+</html>
+
+<script>
+  const homeBtn = document.getElementById("home-btn");
+
+  /*   homeBtn.addEventListener("click", function (e) {
+    console.log(e.target);
+    e.target.innerText = "Clicked Button";
+  }); */
+
+  homeBtn.addEventListener("click", function () {
+    console.log(this);
+    this.innerText = "Sushmitha clicked the button";
+    this.style.backgroundColor = "tomato";
+    //this.style.display = "none";
+  });
+</script>
