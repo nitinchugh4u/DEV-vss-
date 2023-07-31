@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    function getGreetings(name){
+        return `welocme to the ${name} C10`
+    }
+
+    fetch("https://fakestoreapi.com/products")
+    .then((data) => data.json())
+    .then((datAgya) => console.log(datAgya))
+    .catch((err) => console.log(err))   
+
+
+
+
+    console.log("start");
+    console.log(getGreetings("nitin"));
+    console.log(getGreetings("rahul"));
+    console.log("end");
+</script>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #unorderList{
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            list-style-type: none;
+            background-color: lightgreen;
+            color: red;
+            padding: 20px;
+            
+        }
+        .unorderListKBache{
+            background-color:lightgrey;
+            padding: 20px;
+            
+            
+        }
+
+    </style>
+</head>
+<body>
+
+    <ul id =unorderList>
+        <li class="unorderListKBache">nitin</li>
+        <li class="unorderListKBache">rahul</li>
+        <li class="unorderListKBache">neha</li>
+        <li class="unorderListKBache">priya</li>
+        <li class="unorderListKBache">riya</li>
+    </ul>
+    
+</body>
+</html>
+
+<script>
+    const ul = document.getElementById("unorderList");
+    console.log(ul);
+
+    ul.style.backgroundColor = "lightgrey";
+    ul.style.color = "yellow"
+    
+    
+    const li = document.getElementsByClassName("unorderListKBache");
+    console.log(li);
+
+    for(let i =0; i<li.length; i++){
+  li[i].style.backgroundColor = "red"
+  li[i].addEventListener("click",colorChange)
+
+}
+function colorChange(e){
+    console.log(e);
+    let innerText = e.target.innerText;
+    console.log(innerText);
+    for(let i =0; i<li.length; i++){
+        if(li[i].innerText == innerText){
+            li[i].style.color = "blue"
+            
+        }
+        else{
+            li[i].style.color = "pink"; 
+        }
+    }
+
+
+
+
+    
+
+
+}
+    
+
+
+
+
+</script>

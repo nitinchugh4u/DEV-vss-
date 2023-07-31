@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div id="container">
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+    const container = document.getElementById("container");
+    container.style.display = "flex";
+    container.style.justifyContent = "center";
+    container.style.flexWrap = "wrap";
+    container.style.backgroundColor = "lightgrey";
+    container.style.gap = "8px";
+
+    let numbers = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105];
+
+    for (let i = 0; i < numbers.length; i++) {
+        let div = document.createElement("div");
+        div.className = "insideDiv";
+        div.style.height = "100px";
+        div.style.width = "100px";
+        div.innerText = numbers[i];
+        div.style.backgroundColor = numbers[i] % 2 === 0 ? "blue" : "red";
+        div.style.display = "flex";
+        div.style.justifyContent = "center";
+        div.style.alignItems = "center";
+        div.style.color = numbers[i] % 2 === 0 ? "red" : "blue";
+        div.addEventListener("click", changeColor);
+        container.appendChild(div);
+    }
+
+    function changeColor(e) {
+        // Get all div elements with class "insideDiv"
+        const divElements = document.getElementsByClassName("insideDiv");
+
+        // Loop through all div elements and set their text color to grey
+        for (let i = 0; i < divElements.length; i++) {
+            divElements[i].style.color = "grey";
+        }
+
+        // Set the text color of the clicked div to pink
+        e.target.style.color = "pink";
+    }
+</script>
+<!-- In this updated code, the changeColor function is modified to change the text color of the clicked div to pink and the text color of all other divs to grey. It achieves this by getting all the div elements with the class "insideDiv" and looping through them to set their text color to grey. Then, it sets the text color of the clicked div (e.target) to pink. Now, when you click on any div, its text will turn pink, and all other divs' text will become grey. -->
+
+
+
+
+

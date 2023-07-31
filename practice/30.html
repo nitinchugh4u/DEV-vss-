@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="paraa">hey nitin</p>
+    <p class="para">hey romesh</p>
+    <p class="para">hey neha</p>
+    <p class="para">hey mohit</p>
+    <p class="para">hey sanket</p>
+    
+</body>
+</html>
+<script>
+    const paraa = document.getElementsByClassName("paraa");
+    console.log(paraa);
+
+    const para = document.getElementsByClassName("para");
+    console.log(para);
+    console.log(para[0]);
+    console.log(para[1]);
+    console.log(para[2]);
+    console.log(para[3]);
+    console.log(para[4]);
+    let arr = [];
+
+
+    for(let i=0; i<para.length; i++){
+        para[i].style.color = "red";
+        para[i].style.backgroundColor = "blue"
+        para[i].innerText = "hello change";
+        para[i].style.backgroundColor= "lightgrey"
+        para[i].innerHTML = "<strong>hey nitin</Strong>"
+            para[i].style.border= "2px solid black";
+            para[i].style.borderRadius = "12px"
+            arr[i]= para[i].innerText;
+}
+
+console.log(para);
+console.log("arr",arr);
+
+
+
+
+
+
+
+
+
+    
+</script>

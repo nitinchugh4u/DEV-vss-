@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div id="container">
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+    const container = document.getElementById("container");
+    container.style.display = "flex";
+    container.style.justifyContent = "center"
+    container.style.flexWrap ="wrap"
+    container.style.backgroundColor ="lightgrey"
+    container.style.gap = "8px"
+
+   let numbers = [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100, 105];
+let arr =[]
+for(let i =0; i<numbers.length; i++){
+    if(numbers[i]%2 == 0){
+        let div = document.createElement("div");
+        div.className = "insideDiv"
+        div.style.height = "100px";
+        div.style.width = "100px";
+        div.innerText = numbers[i];
+        div.style.backgroundColor = "blue"
+        div.style.display = "flex";
+        div.style.justifyContent ="center"
+        div.style.alignItems = "center"
+        div.style.color ="red";
+        div.addEventListener("click",changeColor)
+        
+        container.appendChild(div);
+         
+
+    }else{
+        let div = document.createElement("div");
+        div.className = "insideDiv"
+        div.style.height = "100px";
+        div.style.width = "100px";
+        div.innerText = numbers[i];
+        div.style.backgroundColor = "red"
+        div.style.display = "flex";
+        div.style.justifyContent ="center"
+        div.style.alignItems = "center"
+        div.style.color ="blue";
+        div.addEventListener("click",changeColor);
+        container.appendChild(div);
+         
+
+    }
+}
+
+
+
+
+
+function changeColor(e){
+
+    console.log(e);
+    let innerText = e.target.innerText;
+  console.log(innerText);
+  let insideDiv = document.getElementsByClassName("insideDiv");
+  for(let i =0; i<insideDiv.length; i++){
+    if(innerText == insideDiv[i].innerText){
+        insideDiv[i].style.color = "green"
+        insideDiv[i].style.backgroundColor = "lightgrey"
+        window.alert("hello")
+
+        
+
+        
+    }
+    else{
+        insideDiv[i].style.color = "yellow"
+    }
+
+  }
+
+}
+</script>

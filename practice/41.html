@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+const result = fetch("https://fakestoreapi.com/products");
+// result
+// .then((data) => data.json())
+// .then((data) => console.log(data))
+// .catch((err)=> console.log(err)) 
+
+result
+.then(function (aayaHuaData){
+    return aayaHuaData.json();
+})
+.then(function  (meraUparSeAayaHuaData){
+    console.log(meraUparSeAayaHuaData);
+    giveMeDataAndILLLoopAndRenderUI(meraUparSeAayaHuaData)
+});
+function giveMeDataAndILLLoopAndRenderUI(x){
+    console.log("x",x);
+}
+
+</script>
+
+
+
+<!-- fetch("https://fakestoreapi.com/products"); -->
