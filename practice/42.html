@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #searchBarDiv{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: red;
+    }
+
+</style>
+<body>
+
+    <div id="searchBarDiv">
+        <input id="searchbar" type="text" placeholder="search">
+    </div>
+
+
+
+    <div id="container"></div>
+    
+</body>
+</html>
+<script>
+    let copyOfData;
+    const searchBar = document.getElementById("searchbar")
+    searchBar.addEventListener("input",find)
+    function find(e){
+        console.log(e);
+       let input = e.target.value; 
+       console.log(input);
+       
+       containerDiv.innerHTML = "";
+       
+       let resArr = compare(copyOfData,input)
+       renderUi(resArr);
+
+    } 
+
+    function compare(copyOfData,input){
+        input.toLowerCase();
+        let match = []
+        for(let i =0; i<copyOfData.length; i++){
+         let title = copyOfData[i].title;
+         
+         title = title.toLowerCase();
+
+         if(title.includes(input)){
+            match.push(copyOfData[i])
+        }
+        }
+        return match;
+
+    }
+
+    
+
+
+const containerDiv = document.getElementById("container");
+containerDiv.style.backgroundColor = "lightGrey"
+containerDiv.style.display = "flex";
+containerDiv.style.justifyContent = "center"
+containerDiv.style.alignItems = "center"
+containerDiv.style.flexWrap = "wrap"
+containerDiv.style.padding  = "20px"
+containerDiv.style.gap = "20px"
+      const result = fetch("https://fakestoreapi.com/products")
+     result
+     .then((data) => data.json())
+     .then((data) => {
+        console.log(data);
+        copyOfData = data;
+        renderUi(data)
+
+    })
+    function renderUi(data){
+        for(let i = 0; i <data.length; i++){
+            const innerDiv = document.createElement("div");
+            innerDiv.style.height = "450px";
+            innerDiv.style.width = "300px";
+            innerDiv.style.backgroundColor = "red"
+            
+            
+            // innerDiv.style.color= "blue"
+           
+            const para1 = document.createElement("p")
+            const para2 = document.createElement("p");
+            const image = document.createElement("img");
+
+            para1.innerText = data[i].title;
+            
+            para2.innerText = data [i].price;
+            
+            image.src = data[i].image
+            image.style.height = "250px";
+            image.style.width = "150px";
+            image.style.display ="flex"
+            image.style.justifyContent ="center"
+            image.style.alignItems =""
+            
+
+            innerDiv.appendChild(para1)
+            innerDiv.appendChild(para2)
+            innerDiv.appendChild(image)
+            containerDiv.appendChild(innerDiv);
+        }
+
+
+
+    }
+      
+
+</script>
