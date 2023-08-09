@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+
+    var a = 10;  //global scope
+    let c = 20;  //Script scope
+    const d = true // Script scope
+
+    //block scope
+    for(let i =0; i<3; i++){
+        console.log({i});
+    }
+
+    // console.log(i);  //error not defined
+
+    
+    console.log(j);  //undefined
+
+    //Global scope
+    for(var j=0; j<3; j++){
+        console.log({j});
+    }
+    console.log(j);  //can access outside
+
+
+    {    //block scope
+        let c1 = "deepak"
+    }
+    // console.log({c1})  //not deined
+</script>
+
+
+<script>
+    const city ="pune";
+    const state = "mh";
+    const phone = "9999"
+
+    console.log("normal", phone, city, state)
+    console.log("advance" ,{city,state,phone})
+</script>

@@ -1,0 +1,50 @@
+<!-- https://res.cloudinary.com/practicaldev/image/fetch/s--WmYga0PP--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_66%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4ty49vslo873hpehxdrw.gif -->
+<!-- https://res.cloudinary.com/practicaldev/image/fetch/s--AC5E-9bo--/c_imagga_scale,f_auto,fl_progressive,h_420,q_66,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eiz3o1fe8lx4okxtmi27.gif -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  var a = 10; // Global scope
+  let c = 20; // Script scope
+  const d = true; // Script scope
+
+  function tryMe() {
+    let a1 = 10;
+    var c2 = 30;
+    const d1 = 300;
+  }
+
+  tryMe();
+
+  // Block Scope
+  for (let i = 0; i < 3; i++) {
+    console.log({ i });
+  }
+
+  // Global scope
+  for (var j = 0; j < 3; j++) {
+    console.log({ j });
+  }
+
+  {
+    // Block scope
+    let c1 = "Deepak";
+  }
+</script>
+
+<script>
+  const city = "Pune";
+  const state = "MH";
+  const phone = "9999";
+
+  console.log("Normal: ", phone, city, state);
+  console.log("Advance: ", { city, phone, state });
+</script>
