@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <input id="input" type="text">
+    <button id="undo">undo</button>
+    <button id="redo">redo</button>
+    
+
+    
+</body>
+</html>
+
+<script>
+    const input = document.getElementById("input");
+    console.log(input);
+    
+    const undo = document.getElementById("undo");
+    const redo = document.getElementById("redo");
+    let popValue = [];
+
+
+
+
+    undo.addEventListener("click", remove)
+    function remove(){
+        let userInput = input.value.split("");  //[n,i,t,i,n]
+
+      if(userInput.length>0){
+        // let userInput = input.value.split("");  //[n,i,t,i,n]
+        console.log(userInput);        
+        let removeChar = userInput.pop();    //n
+        console.log( "pop",removeChar);
+
+        // input.value = userInput;
+        input.value = userInput.join("");
+        popValue.push(removeChar);
+        console.log(popValue);
+    
+       }else{
+        alert("invalid input")
+      }
+    }
+
+
+
+
+</script>

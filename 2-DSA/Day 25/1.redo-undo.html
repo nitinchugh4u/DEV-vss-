@@ -1,0 +1,82 @@
+<!-- step1 - when  user enter something we have to track it -->
+<!-- step2 - when user click on undo we have to remove last character  -->
+<!-- step3 - when user click on redo then we have to add last element  -->
+<!-- step4 - -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input id="inp" type="text">
+
+    <button id="button">undo</button>
+    <!-- <button>redo</button> -->
+
+
+    
+    
+</body>
+</html>
+
+<script>
+    // let copyOfUserValue;
+    
+    const input= document.getElementById("inp")
+    console.log(input);
+
+    const button = document.getElementById("button");
+    console.log(button);
+
+    input.addEventListener("input",store)
+    function store(e){
+        console.log(e);   
+       const userValue = e.target.value;
+       copyOfUserValue = userValue;
+      console.log( typeof userValue);
+       const userEnter = console.log("userInput", userValue);
+
+       button.addEventListener("click", remove)
+    function remove(){
+       console.log( "yo");
+      
+        
+
+
+        
+
+
+    }
+    }
+
+
+    // button.addEventListener("click", remove)
+    // function remove(e){
+    //    console.log( "yo",e);
+      
+        
+
+
+        
+
+
+    // }
+    // console.log(userValue)
+
+
+    // button.addEventListener("click", remove)
+    // function remove(){
+
+
+    // }
+
+
+    
+</script>

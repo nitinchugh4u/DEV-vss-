@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            background-color: cadetblue;
+        }
+        #input{
+            background-color: lightgray;
+            border-radius: 10px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 250px;
+
+        }
+        #button{
+            background-color: crimson;
+            border-radius: 10px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            padding: 10px;
+
+        }
+
+        #button2{
+            background-color:cornflowerblue;
+            border-radius: 10px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+
+        }
+
+
+
+
+        
+    </style>
+</head>
+<body>
+
+    <input  id="input" type="text" placeholder="search">
+    <button id="button">undo</button>
+    <button id="button2">redo</button>
+    
+</body>
+</html>
+
+<script>
+
+    const input = document.getElementById("input");
+    console.log(input);
+    
+    const button = document.getElementById("button")
+    console.log(button);
+
+    const button2 = document.getElementById("button2");
+    console.log(button2);
+
+
+
+button.addEventListener("click",undo)
+let arrPush = [];
+
+function undo(){
+    let userInput = input.value;                        // rom    arr = h,s,e
+    console.log( "userInput:",userInput)  //romesh
+    console.log(typeof userInput);
+
+    if(userInput.length>0){
+
+    let arr = userInput.split("");
+    console.log("initial:",arr);
+
+    arr1 = arr.pop();
+    console.log("pop:",arr1);
+
+
+    arrPush.push(arr1);
+    console.log( "push",arrPush)
+
+    
+    console.log("final:", arr)
+    input.value = arr.join("");
+
+    }else{
+        alert("invalid input")
+    }
+     
+}
+
+button2.addEventListener("click", redo)
+
+function redo(){
+    
+    let userInput = input.value;             
+    console.log("userInput",userInput);
+
+    let arr = userInput.split("")      
+    console.log(arr);
+    
+    let last =  arrPush[arrPush.length-1];
+     console.log("last:", last);
+
+     arrPush.pop()
+
+     arr.push(last);
+     console.log("arr",arr)
+
+
+     input.value = arr.join("");
+
+    
+
+
+
+    
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
