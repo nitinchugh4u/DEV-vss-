@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inp" type="text" placeholder="search">
+    <button id="button">undo</button>
+    <button id="button1">redo</button>
+    
+    
+</body>
+</html>
+
+<script>
+
+    let array = [];
+    const inputs = document.getElementById("inp");
+    console.log(inputs);
+    // console.log(input.innerText);
+    // console.log(input.value)
+
+    const undo = document.getElementById("button");
+    console.log(undo);
+    console.log(undo.innerText);
+
+    const redo = document.getElementById("button1");
+    console.log(redo);
+    console.log(redo.innerText);
+
+
+
+// task
+// 1. add event listener on undo whwn user clcik on undo
+// 2.we have to remove the last element from the array
+// 3  and we have to store the pop elemnet in an array so that it can be use when redo
+// 4. and we have  to change the value inside the input also we have to show there the resultant array that we got after pop the last element from an array.
+
+
+// undo
+
+undo.addEventListener("click",Undo)
+function Undo(e){
+    // console.log(inputs.value);
+    let userValue = inputs.value;
+    console.log("userValue",userValue);
+    // console.log(typeof userValue);
+    if(userValue.length>0){
+
+    let arr = userValue.split("")
+    console.log("arr",arr);
+    let pop = arr.pop();
+    console.log( "pop",pop);
+    array.push(pop);
+    console.log("pushInArray",array);
+    console.log("arrayAfterPop" ,arr);
+    inputs.value = arr.join("");
+    console.log(inputs.value)
+}else{
+    alert("enter valid input")
+}
+}
+
+//redo
+
+
+redo.addEventListener("click",Redo)
+function Redo(){
+    console.log("array",array);
+    console.log(inputs.value);
+
+    let userValue = inputs.value;
+   let arr = userValue.split("");
+   console.log("arr",arr)
+
+   let pop = array.pop();
+   console.log(pop);
+
+   arr.push(pop);
+   console.log(arr);
+
+   inputs.value = arr.join("");
+}
+
+</script>

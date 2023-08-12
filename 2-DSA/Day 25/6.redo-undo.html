@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        background-color: black;
+    }
+    #input{
+        background-color: lightgray;
+        border-radius: 10px;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+    }
+    #undo{
+        background-color: crimson;
+        border-radius: 10px;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        padding: 10px;
+        margin-left: 10px;
+    }
+
+    #redo{
+        background-color:cornflowerblue;
+        border-radius: 10px;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        margin-left: 10px;
+    }
+    </style>
+</head>
+<body>
+
+    <input id="input" type="text">
+    <button id="undo">undo</button>
+    <button id="redo">redo</button>
+    
+</body>
+</html>
+
+<script>
+
+let userEnter;
+let pop =[];
+
+const input =  document.getElementById("input");
+console.log(input);
+
+const  undo = document.getElementById("undo");
+console.log(undo);
+
+input.addEventListener("input", getInput)
+function getInput(e){
+    // console.log(e.target.value);
+    userEnter = e.target.value;
+    // userEnter = input.value;
+    console.log("userEnter:",userEnter);
+    console.log(typeof userEnter);
+}
+
+undo.addEventListener("click", Undo)
+function Undo(e){
+console.log("userEnter",userEnter)
+console.log(typeof userEnter);
+let arr = userEnter.split("")
+console.log("initial arr:",arr);
+let arr2 = arr.pop();
+pop.push(arr2);
+console.log("popArr", pop);
+console.log("final arr:", arr);
+input.value = arr.join("");
+console.log("input.Value:", input.value)
+userEnter = input.value;
+console.log("userEnter:", userEnter)
+}
+
+
+
+redo.addEventListener("click", Redo)
+function Redo(){
+    console.log("userEnter", userEnter);
+    console.log(typeof userEnter);
+    let arr = userEnter.split("");
+    let popValue = pop.pop();
+    arr.push(popValue);
+    console.log(arr);
+    input.value = arr.join("");
+    userEnter = input.value;
+}
+</script>
+

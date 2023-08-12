@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+      }
+      .box {
+        display: flex;
+        gap: 18px;
+      }
+      .search-box {
+        width: 190px;
+        height: 37px;
+        margin-top: 15px;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <i class="fa-solid fa-rotate-left" id="backward"></i>
+        <i class="fa-solid fa-rotate-right" id="forward"></i>
+      </div>
+      <input
+        type="Search"
+        id="search-txt"
+        class="search-box"
+        placeholder="Search"
+      />
+
+      <button>Submit</button>
+    </div>
+  </body>
+</html>
+<script>
+  let forsearchtxt = document.getElementById("search-txt");
+  let forbackward = document.getElementById("backward");
+  let forforward = document.getElementById("forward");
+
+  let savetxt;
+
+  forsearchtxt.addEventListener("input", () => {
+    // getting value forsearchtxt
+    // console.log("forsearchtxt", forsearchtxt.value);
+    savetxt = forsearchtxt.value.split("");
+    console.log("savetxt", savetxt);
+  });
+
+  forbackward.addEventListener("click", () => {
+    for (let i = 0; i < savetxt.length; i++) {
+      // forsearchtxt.value = savetxt.pop();
+      savetxt.pop();
+      // console.log("savetxt", savetxt);
+      forsearchtxt.value = savetxt.join("");
+      // forsearchtxt.value = savetxt;
+      // console.log("savetxt1", savetxt.pop());
+      // savetxt.value = savetxt.join();
+    }
+  });
+</script>
