@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #form{
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* width: 500px; */
+            background-color:lightgrey;
+            color: cadetblue;
+        }
+
+        #undo{
+            background-color: red;
+            padding: 10px;
+            margin: 10px;
+        }
+        #redo{
+           background-color: cornflowerblue;
+            padding: 10px;
+            margin: 10px;
+        }
+
+
+        
+        
+        
+    </style>
+
+</head>
+<body>
+
+    <form id="form" action="form">
+        <label for="fname">First Name</label>
+        <input type="text">
+        <label for="lname">Last Name</label>
+        <input type="text">
+        <label for="Roll">Roll no</label>
+        <input type="number">
+        <label for="email">Email</label>
+        <input type="email">
+        <label for="city">city</label>
+        <input type="text">
+    
+        <!-- <button id="undo">undo</button>
+        <button id="redo">redo</button> -->
+    </form>
+    
+    <button id="undo">undo</button>
+    <button id="redo">redo</button>
+        
+    
+</body>
+</html>
+
+<script>
+
+    let arrPush = []
+    let arrPush2 =[] 
+    let userEnter;
+
+const form = document.getElementById("form");
+console.log(form);
+
+const undo = document.getElementById("undo");
+console.log(undo);
+
+form.addEventListener("input", find);
+
+function find(e){
+// console.log("UserEnter:",e.target.value);
+userEnter =  e.target.value;
+console.log("userEnter:", userEnter);
+arrPush.push(userEnter);
+console.log( "arrPush",arrPush);
+ x = arrPush.pop()
+ arrPush2.push(x);
+ console.log("arrPush2",arrPush2)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+

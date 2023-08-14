@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <style>
+        body{
+        display: flex;
+        justify-content: center;
+        background-color: black;
+    }
+    .input{
+        background-color: lightgray;
+        border-radius: 10px;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+    }
+
+        #undo{
+        background-color: crimson;
+        border-radius: 10px;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        padding: 10px;
+        margin-left: 10px;
+        margin-top: 10px
+        ;
+    }
+        #redo{
+        background-color:cornflowerblue;
+        border-radius: 10px;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        margin-left: 10px;
+        padding: 10px;
+        margin-top: 10px;
+    }
+      
+    
+    </style> -->
+
+</head>
+<body>
+
+    <input class="input" type="text">
+    <input class="input" type="text">
+    <input class="input" type="text">
+    <input class="input" type="text">
+    <input class="input" type="text">
+    <input class="input" type="text">
+    <input class="input" type="text"> 
+    <input class="input" type="text">
+    <input class="input" type="text">
+    <input class="input" type="text">
+    <input class="input" type="text">
+    <input class="input" type="text">
+
+
+
+    <button id="undo">undo</button>
+    <button id="redo">redo</button>
+
+    
+</body>
+</html>
+
+
+
+<script>
+
+
+const  inputElem = document.getElementsByClassName("input");
+console.log("inputElem",inputElem);
+
+const undo = document.getElementById("undo");
+console.log("undo",undo);
+
+const redo = document.getElementById("redo")
+console.log("redo",redo)
+
+let arr =[];
+
+
+for(let i = 0; i<inputElem.length; i++){
+    inputElem[i].addEventListener("input",find)
+    function find(e){
+        console.log(e.target.value);
+        arr[i] = e.target.value;
+        console.log("arr",arr)
+    }
+}
+
+// let j= 2
+let i = inputElem.length-1;
+undo.addEventListener("click", Undo)
+
+ function Undo(){
+    for(let j = i; j>=0;j--){
+    inputElem[j].value = ""
+    i--;
+    break;
+}
+    }
+    let x =0;
+    let z=0;
+    redo.addEventListener("click", Redo)
+    function Redo(){
+        for(let k=0; k<inputElem.length;k++){
+            inputElem[z].value = arr[x];
+            x++;
+            z++
+            
+            break;
+        }
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+
+- Find 3-4 ways to create deep copy in object
+- Practise Spread operator in details for simple & nested object
+
+
+const profile = {
+    name: "Sanket",
+    city: "Pune",
+    state: "MH",
+    details: {
+      isMarried: false,
+      isWorking: true,
+      isASportsMan: true,
+    },
+  };
+  
+  const cpProfile = structuredClone(profile);
+  
+  console.log("Profile: ", profile);
+  console.log("cpProfile: ", cpProfile);
