@@ -10,7 +10,7 @@
         display: flex;
         justify-content: center;
         background-color: black;
-        /* flex-wrap: wrap; */
+        flex-wrap: wrap;
 
     }
     .input{
@@ -55,13 +55,13 @@
 </head>
 <body>
 
-    <!-- <input class="input" type="text"> -->
-    <!-- <input class="input" type="text"> -->
-    <!-- <input class="input" type="text"> -->
-    <!-- <input class="input" type="text"> -->
-    <!-- <input class="input" type="text"> -->
-    <!-- <input class="input" type="text"> -->
-    <!-- <input class="input" type="text">  -->
+    <input class="input" type="text"> 
+    <input class="input" type="text">
+    <input class="input" type="text">
+    <input class="input" type="text">
+    <input class="input" type="text">
+    <input class="input" type="text">
+     <input class="input" type="text"> 
     <input class="input" type="text">
     <input class="input" type="text">
     <input class="input" type="text">
@@ -111,7 +111,13 @@ undo.addEventListener("click", Undo)
     for(let j = i; j>=0;j--){
     inputElem[j].value = ""
     console.log("i index before:", i);
+    if(i>=1){
     i--;
+    }else{
+        i= inputElem.length-1;
+        console.log(i);
+        // j = input.length;
+    }
     console.log("i index after:",i);
     break;
 }
@@ -132,6 +138,11 @@ undo.addEventListener("click", Undo)
             if(x<inputElem.length-1){
             x++;
             z++
+            }else{
+                x=0;
+                z=0;
+                k=-1;
+
             }
             console.log("x index after:", x);
             console.log("z index after:", z);
@@ -140,29 +151,6 @@ undo.addEventListener("click", Undo)
             break;
         }
     }
-
-
-
-
-
-
-   
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </script>
 

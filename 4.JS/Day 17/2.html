@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    heloo
+  </body>
+</html>
+
+<script>
+  const p = [
+    {
+      id: 1,
+      name: "John Doe",
+      city: "New York",
+      state: "New York",
+      isActive: true,
+    },
+    {
+      id: 2,
+      name: "Jane Smith",
+      city: "Los Angeles",
+      state: "California",
+      isActive: false,
+    },
+    {
+      id: 3,
+      name: "Michael Johnson",
+      city: "Chicago",
+      state: "Illinois",
+      isActive: true,
+    },
+    {
+      id: 4,
+      name: "Emily Brown",
+      city: "Houston",
+      state: "Texas",
+      isActive: true,
+    },
+  ];
+
+  const chnage = p.map((item) => {
+    if (item.isActive === false) {
+      return { ...item, isActive: "not available" };
+    } else {
+      return { ...item, isActive: "Available" };
+    }
+  });
+  console.log(chnage);
+</script>
+
+
+
+
+
+
+
+
+<!-- const result = p.map((item) => ({ -->
+    <!-- ...item, -->
+    <!-- isActive: item.isActive ? "Available" : "Not Available", -->
+  <!-- })); -->

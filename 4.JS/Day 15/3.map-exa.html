@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  const p = [
+    {
+      id: 1,
+      name: "John Doe",
+      city: "New York",
+      state: "New York",
+      isActive: true,
+    },
+    {
+      id: 2,
+      name: "Jane Smith",
+      city: "Los Angeles",
+      state: "California",
+      isActive: true,
+    },
+    {
+      id: 3,
+      name: "Michael Johnson",
+      city: "Chicago",
+      state: "Illinois",
+      isActive: false,
+    },
+    {
+      id: 4,
+      name: "Emily Brown",
+      city: "Houston",
+      state: "Texas",
+      isActive: false,
+    },
+  ];
+
+  /*   const afterMapV1 = p.map((currentItem) => {
+    if (currentItem.isActive) {
+      currentItem.isActive = "Available";
+    } else {
+      currentItem.isActive = "Not Available";
+    }
+
+    return currentItem;
+  }); */
+
+  const afterMapV1 = p.map((currentItem) => {
+    const copyItem = { ...currentItem };
+    if (copyItem.isActive) {
+      copyItem.isActive = "Available";
+    } else {
+      copyItem.isActive = "Not Available";
+    }
+
+    return copyItem;
+  });
+
+  const afterMapV2 = p.map((currentItem) => ({
+    ...currentItem,
+    isActive: currentItem.isActive ? "Available" : "Not Available",
+  }));
+
+  console.log("afterMapV2: ", afterMapV2);
+  console.log("BeforeMapV1: ", p);
+</script>

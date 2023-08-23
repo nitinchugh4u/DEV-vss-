@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+
+<script>
+
+
+
+const profile = {
+  name: "Sanket",
+  city: "Pune",
+  state: "MH",
+  details: {
+    isMarried: false,
+    isWorking: true,
+    isASportsMan: true,
+  },
+};
+
+const cpProfile = structuredClone(profile);
+
+console.log("Profile before: ", profile);
+console.log("cpProfile: ", cpProfile);
+
+
+profile.name = "Nitin";
+profile.city = "Delhi";
+profile.state = "New Delhi";
+
+console.log("Profile after: ", profile);
+console.log("cpProfile: ", cpProfile);
+
+profile.details.isMarried = true;
+profile.details.isWorking = false;
+profile.details.isASportsMan = false; 
+
+console.log("Profile after: ", profile);
+console.log("cpProfile: ", cpProfile);
+
+
+
+
+
+
+
+
+</script>

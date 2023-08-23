@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+
+<script>
+  let namee = "siddhant1";
+  var uname = "siddhant";
+
+  let Myobject = {
+    namee: "suraj",
+    normalFunction: function () {
+      let age = 20;
+      function ageDefine() {
+        console.log(this.age);
+      }
+      console.log(this.namee); //suraj, present in this scope
+
+      ageDefine();
+    },
+    arrowFunction: () => {
+      let age = 20;
+      const ageDefine = () => {
+        console.log(this.age);
+      };
+
+      console.log(this.uname); //siddhant,as it is var present in global scope
+      console.log(this.namee); //undefined , not in global scope it is in script scope
+      ageDefine();
+    },
+  };
+
+  Myobject.normalFunction();
+</script>
