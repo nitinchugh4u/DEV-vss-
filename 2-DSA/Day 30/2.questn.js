@@ -18,6 +18,7 @@ const validParanthesis = (input) => {
     for (let i = 0; i < splittedArr.length; i++) {
       const currentElem = splittedArr[i]; // ")"
       const recentlyPushedStackElem = stackArr[stackArr.length - 1]; // ]
+      
   
       // Check for {}
       if (recentlyPushedStackElem === "{" && currentElem === "}") {
