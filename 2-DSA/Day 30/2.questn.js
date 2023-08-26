@@ -1,4 +1,4 @@
-const validParanthesis = (input) => {
+ const validParanthesis = (input) => {
     const splittedArr = input.split("");
   
     const [firstElem] = splittedArr;
