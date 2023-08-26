@@ -14,7 +14,7 @@ a =20;  //redeclered
 console.log(a);
 
 var a= 1000;
-console.log(a);
+console.log("hey",a);
 
 
 
